@@ -7,8 +7,6 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 20;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int tiledraise  = 1;    /* 1 means raise tiled windows when focused */
-
 static const char *fonts[]          = { "scientifica:size=16:antialias=true:autohint=true",
                                         "Inconsolata Nerd Font:size=16:antialias=true:autohint=true"};
 static const char dmenufont[]       = "scientifica:size=16";
@@ -72,8 +70,6 @@ static const Rule rules[] = {
 	{ "st-256color", NULL,       NULL,       0,            1,           -1 },
 	{ "Spotify",     NULL,       NULL,       0,            1,           -1 },
 	{ "Discord",     NULL,       NULL,       1 << 4,       1,           -1 },
-	{ "Nautilus",    NULL,       NULL,       0,            1,           -1 },
-	{ "feh",         NULL,       NULL,       0,            1,           -1 },
 	/* { NULL,       NULL,       "Cmus",     1 << 5,       0,           -1 }, */
 };
 
@@ -114,7 +110,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("nautilus") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -g 115x20 -f threescientifica ranger") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,          SHCMD("pulseaudio-ctl down 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,          SHCMD("pulseaudio-ctl up 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioMute,        spawn,          SHCMD("pulseaudio-ctl mute ; kill -44 $(pidof dwmblocks)") },
