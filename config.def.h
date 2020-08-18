@@ -9,9 +9,9 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int tiledraise  = 1;    /* 1 means raise tiled windows when focused */
 
-static const char *fonts[]          = { "scientifica:size=16:antialias=true:autohint=true",
-                                        "Inconsolata Nerd Font:size=16:antialias=true:autohint=true"};
-static const char dmenufont[]       = "scientifica:size=16";
+static const char *fonts[]          = { "Inconsolata Nerd Font:size=15:antialias=true:autohint=true", };
+                                        /* "Inconsolata Nerd Font:size=16:antialias=true:autohint=true"}; */
+static const char dmenufont[]       = "Product Sans:size=13:antialias=true:autohint=true";
 
 // gruvbox
 static const char col_gb_bg[]        = "#282828";
@@ -103,6 +103,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define PrintScreenDWM	    0x0000ff61
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -113,8 +114,10 @@ static const char *termcmd[]  = { "st", "-g", "120x30", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("nautilus") },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ 0,                    PrintScreenDWM,    spawn,          SHCMD("flameshot gui") },
+	{ MODKEY,                       XK_l,      spawn,          SHCMD("google-chrome-stable") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,          SHCMD("pulseaudio-ctl down 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,          SHCMD("pulseaudio-ctl up 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioMute,        spawn,          SHCMD("pulseaudio-ctl mute ; kill -44 $(pidof dwmblocks)") },
