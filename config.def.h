@@ -1,9 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-/* Init */
-static const char *const autostart[] = {
-  "sh", "-c", "init.sh", NULL,
-};
 
 /* appearance */
 static const unsigned int borderpx  = 3;      /* border pixel of windows */
@@ -45,6 +41,12 @@ static const char *colors[][3]      = {
 	[SchemeNotify] =  { col_red,    col_white,  col_gray1 },
 	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 },
 	[SchemeIndOff] =  { col_green,  col_blue,   col_gray1 },
+};
+
+
+static const char *const autostart[] = {
+	"sh", "-c", "/usr/src/dwm/init.sh", NULL,
+	NULL /* terminate */
 };
 
 /* tagging */

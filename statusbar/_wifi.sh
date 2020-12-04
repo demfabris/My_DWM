@@ -15,4 +15,4 @@ curl www.google.com.br &>/dev/null || ICON=" " ISTATE="^c#fe8019^"
 
 [ -z $SSID ] && SSID="off" && ICON="ﲁ " && ISTATE="^c#cc241d^"
 
-echo "^c#282828^${ISTATE} ${SSID} ${ICON} ^d^"
+printf "^c#282828^${ISTATE} ${SSID} ${ICON} ^d^"
