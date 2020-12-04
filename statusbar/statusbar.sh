@@ -13,8 +13,3 @@ main() {
 . ~/.dwm/statusbar/_displaytime.sh ;
 
 }
-
-# while true;
-#     do xsetroot -name "$(main | tr "\n" " ")"
-#         sleep 1;
-# done;

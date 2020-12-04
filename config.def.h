@@ -1,5 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
+/* Init */
+static const char *const autostart[] = {
+  "sh", "-c", "init.sh", NULL,
+};
+
 /* appearance */
 static const unsigned int borderpx  = 3;      /* border pixel of windows */
 static const unsigned int snap      = 10;     /* snap pixel */

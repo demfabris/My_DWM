@@ -9,7 +9,7 @@ xset r rate 300 50
 setxkbmap -model abnt2 -layout br -variant abnt2
 
 # Make screen not so unbearable
-redshift -P -O 5500;
+redshift -P -O 4500;
 
 # Composition
 # picom &
@@ -19,7 +19,7 @@ dunst &
 
 # Wallpaper
 # feh --bg-scale ~/Pictures/redblocks.jpg
-hsetroot -solid "#1d2021"
+hsetroot -solid "#131f26"
 
 # Import statusbar features
 dwmblocks &
