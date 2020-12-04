@@ -91,6 +91,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ ALTMOD,                       XK_Return, togglefloating, {0} },
+	{ ALTMOD|ShiftMask,             XK_Return, togglefullscr,  {0} },
 	{ ALTMOD,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ ALTMOD|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
