@@ -60,7 +60,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel, SchemeHid }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeHid, SchemeNotify, SchemeIndOn, SchemeIndOff, SchemeTitle, SchemeLt }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -723,8 +723,8 @@ void
 drawbar(Monitor *m)
 {
 	int x, w, sw = 0, n = 0, scm;
-	int boxs = drw->fonts->h / 9;
-	int boxw = drw->fonts->h / 6 + 2;
+	int boxs = drw->fonts->h / 10;
+	int boxw = drw->fonts->h / 8;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
@@ -747,14 +747,20 @@ drawbar(Monitor *m)
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		if (occ & 1 << i)
-			drw_rect(drw, x + boxs, boxs, boxw, boxw,
-				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-				urg & 1 << i);
+		if (occ & 1 << i) {
+        if (urg & 1 << i ) {
+            drw_setscheme(drw, scheme[SchemeNotify]);
+            drw_rect(drw, x, 0, w, boxw, 1, 0);
+        }
+			drw_setscheme(drw, scheme[
+				(m == selmon && selmon->sel && selmon->sel->tags & 1 << i) ?
+          SchemeIndOn : SchemeIndOff ]);
+			drw_rect(drw, x, bh - boxw, w, boxw, 1, 0);
+    }
 		x += w;
 	}
 	w = blw = TEXTW(m->ltsymbol);
-	drw_setscheme(drw, scheme[SchemeNorm]);
+	drw_setscheme(drw, scheme[SchemeLt]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - sw - x) > bh) {
@@ -765,7 +771,7 @@ drawbar(Monitor *m)
 				if (!ISVISIBLE(c))
 					continue;
 				if (m->sel == c)
-					scm = SchemeSel;
+					scm = SchemeTitle;
 				else if (HIDDEN(c))
 					scm = SchemeHid;
 				else
@@ -1674,7 +1680,7 @@ setup(void)
 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
 	lrpad = drw->fonts->h;
-	bh = drw->fonts->h + 2;
+	bh = user_bh ? user_bh : drw->fonts->h + 2;
 	updategeom();
 	/* init atoms */
 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);

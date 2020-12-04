@@ -1,22 +1,45 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int snap      = 5;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int borderpx  = 3;      /* border pixel of windows */
+static const unsigned int snap      = 10;     /* snap pixel */
+static const int showbar            = 1;      /* 0 means no bar */
+static const int topbar             = 1;      /* 0 means bottom bar */
+static const int user_bh            = 30;     /* bar height */
+static const int tiledraise         = 1;      /* 1 means raise tiled windows when focused */
 static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=14:antialias=true:autohint=true", };
 static const char dmenufont[]       = "monospace:size=14";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+
+/* Oceanic Next */
+static const char col_dark[]        = "#131f26";
+static const char col_black[]       = "#1B2B34";
+static const char col_gray1[]       = "#343D46";
+static const char col_gray2[]       = "#4F5B66";
+static const char col_gray3[]       = "#65737E";
+static const char col_gray4[]       = "#A7ADBA";
+static const char col_lightgray[]   = "#C0C5CE";
+static const char col_lightgray1[]  = "#CDD3DE";
+static const char col_white[]       = "#D8DEE9";
+static const char col_red[]         = "#EC5f67";
+static const char col_orange[]      = "#F99157";
+static const char col_yellow[]      = "#FAC863";
+static const char col_green[]       = "#99C794";
+static const char col_cyan[]        = "#5FB3B3";
+static const char col_blue[]        = "#6699CC";
+static const char col_magenta[]     = "#C594C5";
+static const char col_brown[]       = "#AB7967";
+
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeHid]  = { col_cyan,  col_gray1, col_cyan  },
+	[SchemeNorm] =    { col_gray2,  col_dark,  col_gray1 },
+	[SchemeSel]  =    { col_yellow, col_dark,  col_yellow },
+	[SchemeTitle]=    { col_yellow,  col_black,  col_red },
+	[SchemeLt]   =    { col_yellow, col_dark,  col_cyan },
+	[SchemeHid]  =    { col_cyan,   col_gray1,  col_cyan  },
+	[SchemeNotify] =  { col_red,    col_white,  col_gray1 },
+	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 },
+	[SchemeIndOff] =  { col_green,  col_blue,   col_gray1 },
 };
 
 /* tagging */
@@ -39,9 +62,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "﩯 ",      tile },    /* first entry is default */
+	{ " ",      NULL },    /* no layout function means floating behavior */
+	{ " ",      monocle }
 };
 
 /* key definitions */
@@ -66,24 +89,26 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ ALTMOD,                       XK_Return, togglefloating, {0} },
+	{ ALTMOD,                       XK_Tab,    focusstack,     {.i = +1 } },
+	{ ALTMOD|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_Left,   setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_Right,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -92,6 +117,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
 	{ MODKEY,                       XK_h,      hide,           {0} },
+	{ MODKEY,                       XK_i,      spawn,          SHCMD("firefox") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
