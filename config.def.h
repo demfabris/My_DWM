@@ -134,7 +134,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,      show,           {0} },
 	{ MODKEY,                       XK_h,      hide,           {0} },
 	{ MODKEY,                       XK_i,      spawn,          SHCMD("firefox") },
-	{ MODKEY,                       XK_l,      spawn,          SHCMD("brave-bin --force-device-scale-factor=1.125") },
+	{ MODKEY,                       XK_l,      spawn,          SHCMD("brave --force-device-scale-factor=1.125") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,      SHCMD("pulseaudio-ctl down 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,      SHCMD("pulseaudio-ctl up 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioMute,        spawn,      SHCMD("pulseaudio-ctl mute ; kill -44 $(pidof dwmblocks)") },

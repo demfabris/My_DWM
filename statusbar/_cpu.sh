@@ -9,7 +9,7 @@ DANGER="^c#cc241d^"
 DI=" "
 
 # Fetching current CPU state
-TEMP="$(sensors | grep -e 'temp1' | awk 'NR==2 {print $2}' | sed 's/[^0-9\.]//g;s/\.[0-9]//g')"
+TEMP="$(sensors | grep -e 'temp1' | awk '{print $2}' | sed 's/[^0-9\.]//g;s/\.[0-9]//g')"
 
 [ $TEMP -lt 30 ] && STATE="${COOL}" && TSTATE="${CI}"
 [ $TEMP -gt 30 ] && [ $TEMP -lt 70 ] && STATE="${WARN}" && TSTATE="${WI}"

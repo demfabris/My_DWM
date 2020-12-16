@@ -2,7 +2,7 @@
 
 # Wifi SSID and strengh
 
-STR="$(grep wlo1 /proc/net/wireless | awk '{print $4}' | sed 's/[^0-9]//g')"
+STR="$(grep wlan0 /proc/net/wireless | awk '{print $4}' | sed 's/[^0-9]//g')"
 STR=$((STR-30))
 SSID="$(iw dev | grep ssid | awk '{print $2}')"
 ISTATE="^c#8ec07c^"
