@@ -22,7 +22,7 @@ dunst &
 hsetroot -solid "#131f26"
 
 # Import statusbar features
-dwmblocks
+dwmblocks &
 
 # exec autolock display
 # xautolock -time 10

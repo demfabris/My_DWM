@@ -7,9 +7,9 @@ static const unsigned int snap      = 10;     /* snap pixel */
 static const unsigned int gappx     = 4;        /* gaps between windows */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
-static const int user_bh            = 30;     /* bar height */
+static const int user_bh            = 35;     /* bar height */
 static const int tiledraise         = 1;      /* 1 means raise tiled windows when focused */
-static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=14:antialias=true:autohint=true", "FiraCode Nerd Font:size=14:antialias=true:autohint=true", "noto-emoji"};
+static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:antialias=true:autohint=true", "noto-emoji"};
 
 /* Oceanic Next */
 static const char col_dark[]        = "#131f26";
@@ -133,8 +133,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
 	{ MODKEY,                       XK_h,      hide,           {0} },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("thunar") },
 	{ MODKEY,                       XK_i,      spawn,          SHCMD("firefox") },
-	{ MODKEY,                       XK_l,      spawn,          SHCMD("brave --force-device-scale-factor=1.125") },
+	{ MODKEY,                       XK_l,      spawn,          SHCMD("brave --force-device-scale-factor=1.25") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,      SHCMD("pulseaudio-ctl down 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,      SHCMD("pulseaudio-ctl up 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioMute,        spawn,      SHCMD("pulseaudio-ctl mute ; kill -44 $(pidof dwmblocks)") },
