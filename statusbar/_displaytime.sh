@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Status bar time
-echo "^c#fbf1c7^ $(date +%X)  ^d^"
+echo "^c#d8dee9^ $(date +%X)  ^d^"

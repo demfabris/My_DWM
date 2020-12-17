@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Defining color variables
-COOL="^c#458588^"
+COOL="^c#6699cc^"
 CI=""
-WARN="^c#fabd2f^"
+WARN="^c#fac863^"
 WI=""
-DANGER="^c#cc241d^"
+DANGER="^c#ec5f67^"
 DI=" "
 
 # Fetching current CPU state
