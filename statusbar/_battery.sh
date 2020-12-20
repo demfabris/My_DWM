@@ -34,6 +34,9 @@ elif [ "$STATUS" = "Not charging"  ]; then
 
 elif [ "$STATUS" = "Charging" ]; then
     ICON=""
+
+elif [ "$STATUS" = "Full" ]; then
+    ICON=""
 fi
 
-echo "${STATE} ${CAP}% ${ICON} ^d^"
+echo "${STATE} ${CAP}% ${ICON}^d^"
