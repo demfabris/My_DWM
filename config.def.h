@@ -133,7 +133,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
 	{ MODKEY,                       XK_h,      hide,           {0} },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("thunar") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -g 150x40 -e nnn -deU") },
 	{ MODKEY,                       XK_i,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_l,      spawn,          SHCMD("brave-bin --force-device-scale-factor=1.25") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,      SHCMD("pulseaudio-ctl down 5 ; kill -44 $(pidof dwmblocks)") },
