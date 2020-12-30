@@ -19,7 +19,8 @@ dunst &
 
 # Wallpaper
 # feh --bg-scale ~/Pictures/redblocks.jpg
-hsetroot -solid "#131f26"
+# hsetroot -solid "#131f26" # oceanic next
+hsetroot -solid "#1b1e24"
 
 # Import statusbar features
 dwmblocks &

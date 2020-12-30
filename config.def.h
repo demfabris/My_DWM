@@ -12,30 +12,46 @@ static const int tiledraise         = 1;      /* 1 means raise tiled windows whe
 static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:antialias=true:autohint=true"};
 
 /* Oceanic Next */
-static const char col_dark[]        = "#131f26";
-static const char col_black[]       = "#1B2B34";
-static const char col_gray1[]       = "#343D46";
-static const char col_gray2[]       = "#4F5B66";
-static const char col_gray3[]       = "#65737E";
-static const char col_gray4[]       = "#A7ADBA";
-static const char col_lightgray[]   = "#C0C5CE";
-static const char col_lightgray1[]  = "#CDD3DE";
-static const char col_white[]       = "#D8DEE9";
-static const char col_red[]         = "#EC5f67";
-static const char col_orange[]      = "#F99157";
-static const char col_yellow[]      = "#FAC863";
-static const char col_green[]       = "#99C794";
-static const char col_cyan[]        = "#5FB3B3";
-static const char col_blue[]        = "#6699CC";
-static const char col_magenta[]     = "#C594C5";
-static const char col_brown[]       = "#AB7967";
+/* static const char col_dark[]        = "#131f26"; */
+/* static const char col_black[]       = "#1B2B34"; */
+/* static const char col_gray1[]       = "#343D46"; */
+/* static const char col_gray2[]       = "#4F5B66"; */
+/* static const char col_gray3[]       = "#65737E"; */
+/* static const char col_gray4[]       = "#A7ADBA"; */
+/* static const char col_lightgray[]   = "#C0C5CE"; */
+/* static const char col_lightgray1[]  = "#CDD3DE"; */
+/* static const char col_white[]       = "#D8DEE9"; */
+/* static const char col_red[]         = "#EC5f67"; */
+/* static const char col_orange[]      = "#F99157"; */
+/* static const char col_yellow[]      = "#FAC863"; */
+/* static const char col_green[]       = "#99C794"; */
+/* static const char col_cyan[]        = "#5FB3B3"; */
+/* static const char col_blue[]        = "#6699CC"; */
+/* static const char col_magenta[]     = "#C594C5"; */
+/* static const char col_brown[]       = "#AB7967"; */
+
+
+/* One Dark */
+static const char col_dark[]        = "#1b1e24";
+static const char col_black[]       = "#282c34";
+static const char col_gray1[]       = "#5c6370";
+static const char col_gray2[]       = "#828997";
+static const char col_white[]       = "#abb2bf";
+static const char col_red[]         = "#e06c75";
+static const char col_red2[]        = "#be5046";
+static const char col_orange[]      = "#d19a66";
+static const char col_yellow[]      = "#e5c07b";
+static const char col_green[]       = "#98c379";
+static const char col_cyan[]        = "#56b6c2";
+static const char col_blue[]        = "#61afef";
+static const char col_magenta[]     = "#c678dd";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] =    { col_gray2,  col_dark,  col_gray1 },
-	[SchemeSel]  =    { col_yellow, col_dark,  col_yellow },
-	[SchemeTitle]=    { col_yellow,  col_black,  col_red },
-	[SchemeLt]   =    { col_yellow, col_dark,  col_cyan },
+	[SchemeNorm] =    { col_gray2,  col_dark,   col_gray2 },
+	[SchemeSel]  =    { col_blue,   col_dark,   col_blue },
+	[SchemeTitle]=    { col_white,  col_black,  col_red },
+	[SchemeLt]   =    { col_blue,   col_dark,   col_cyan },
 	[SchemeHid]  =    { col_cyan,   col_gray1,  col_cyan  },
 	[SchemeNotify] =  { col_red,    col_white,  col_gray1 },
 	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 },
