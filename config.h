@@ -9,7 +9,7 @@ static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
 static const int user_bh            = 35;     /* bar height */
 static const int tiledraise         = 1;      /* 1 means raise tiled windows when focused */
-static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:antialias=true:autohint=true"};
+static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:antialias=true:autohint=true", "Noto", "NotoEmoji"};
 
 /* Oceanic Next */
 /* static const char col_dark[]        = "#131f26"; */
