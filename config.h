@@ -4,7 +4,7 @@
 /* appearance */
 static const unsigned int borderpx  = 2;      /* border pixel of windows */
 static const unsigned int snap      = 10;     /* snap pixel */
-static const unsigned int gappx     = 1;        /* gaps between windows */
+static const unsigned int gappx     = 4;        /* gaps between windows */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
 static const int user_bh            = 35;     /* bar height */
@@ -91,7 +91,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
