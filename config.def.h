@@ -2,9 +2,9 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 3;      /* border pixel of windows */
+static const unsigned int borderpx  = 2;      /* border pixel of windows */
 static const unsigned int snap      = 10;     /* snap pixel */
-static const unsigned int gappx     = 4;        /* gaps between windows */
+static const unsigned int gappx     = 1;        /* gaps between windows */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
 static const int user_bh            = 35;     /* bar height */
@@ -32,7 +32,10 @@ static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:ant
 
 
 /* One Dark */
-static const char col_dark[]        = "#1b1e24";
+static const char col_darker[]      = "#1f2129";
+static const char col_dark[]        = "#23252e";
+static const char col_outline[]     = "#2f333d";
+static const char col_outline_s[]   = "#404654";
 static const char col_black[]       = "#282c34";
 static const char col_gray1[]       = "#5c6370";
 static const char col_gray2[]       = "#828997";
@@ -48,14 +51,14 @@ static const char col_magenta[]     = "#c678dd";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] =    { col_gray2,  col_dark,   col_gray2 },
-	[SchemeSel]  =    { col_blue,   col_dark,   col_blue },
-	[SchemeTitle]=    { col_white,  col_black,  col_red },
-	[SchemeLt]   =    { col_blue,   col_dark,   col_cyan },
-	[SchemeHid]  =    { col_cyan,   col_gray1,  col_cyan  },
-	[SchemeNotify] =  { col_red,    col_white,  col_gray1 },
-	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 },
-	[SchemeIndOff] =  { col_green,  col_blue,   col_gray1 },
+	[SchemeNorm]   =  { col_outline_s,  col_dark,   col_outline },
+	[SchemeSel]    =  { col_gray2,      col_dark,   col_outline_s },
+	[SchemeTitle]  =  { col_white,      col_black,  col_red },
+	[SchemeLt]     =  { col_blue,       col_dark,   col_cyan },
+	[SchemeHid]    =  { col_cyan,       col_gray1,  col_cyan  },
+	[SchemeNotify] =  { col_red,        col_white,  col_gray1 },
+	[SchemeIndOn]  =  { col_blue,       col_yellow, col_gray2 },
+	[SchemeIndOff] =  { col_gray1,      col_blue,   col_gray1 },
 };
 
 
@@ -82,7 +85,7 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,       NULL,       0,            1,           -1 },
 	{ "Insomnia",    NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",     NULL,       NULL,       2,            0,           -1 },
-	{ "Teams",       NULL,       NULL,       3,            0,           -1 },
+	{ "Teams",       NULL,       NULL,       3,            1,           -1 },
 };
 
 /* layout(s) */
@@ -135,7 +138,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Left,   setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,             XK_Right,  setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Up,     zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
@@ -147,14 +150,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_s,      show,           {0} },
-	{ MODKEY,                       XK_h,      hide,           {0} },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -g 150x40 -e nnn -deU") },
+	{ MODKEY,                       XK_Up,     show,           {0} },
+	{ MODKEY,                       XK_Down,   hide,           {0} },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -g 120x30 -e nnn -deHUwxc") },
 	{ MODKEY,                       XK_i,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_l,      spawn,          SHCMD("brave-bin --force-device-scale-factor=1.25") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,      SHCMD("pulseaudio-ctl down 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,      SHCMD("pulseaudio-ctl up 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioMute,        spawn,      SHCMD("pulseaudio-ctl mute ; kill -44 $(pidof dwmblocks)") },
+	{ 0,                  PrintScreenDWM,    spawn,          SHCMD("screenshot") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
