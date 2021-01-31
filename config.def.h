@@ -2,7 +2,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 2;      /* border pixel of windows */
+static const unsigned int borderpx  = 3;      /* border pixel of windows */
 static const unsigned int snap      = 10;     /* snap pixel */
 static const unsigned int gappx     = 4;        /* gaps between windows */
 static const int showbar            = 1;      /* 0 means no bar */
@@ -10,6 +10,32 @@ static const int topbar             = 1;      /* 0 means bottom bar */
 static const int user_bh            = 35;     /* bar height */
 static const int tiledraise         = 1;      /* 1 means raise tiled windows when focused */
 static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:antialias=true:autohint=true", "Noto", "NotoEmoji"};
+
+/* Gruvbox */
+static const char col_gb_black[]    = "#131515";
+static const char col_gb_bg[]       = "#1d2021";
+static const char col_gb_bgm[]      = "#282828";
+static const char col_gb_bgs[]      = "#32302f";
+static const char col_gb_fg[]       = "#fbf1c7";
+static const char col_gb_red1[]     = "#cc241d";
+static const char col_gb_red2[]     = "#fb4934";
+static const char col_gb_green1[]   = "#98971a";
+static const char col_gb_green2[]   = "#b8bb26";
+static const char col_gb_yellow1[]  = "#d79921";
+static const char col_gb_yellow2[]  = "#fabd2f";
+static const char col_gb_blue1[]    = "#458588";
+static const char col_gb_blue2[]    = "#83a598";
+static const char col_gb_purple1[]  = "#b16286";
+static const char col_gb_purple2[]  = "#83869b";
+static const char col_gb_aqua1[]    = "#689d6a";
+static const char col_gb_aqua2[]    = "#8ec07c";
+static const char col_gb_gray1[]    = "#a89984";
+static const char col_gb_gray2[]    = "#928374";
+static const char col_gb_gray3[]    = "#665c54";
+static const char col_gb_gray4[]    = "#3c3836";
+static const char col_gb_gray5[]    = "#a89984";
+static const char col_gb_orange1[]  = "#d65d0e";
+static const char col_gb_orange2[]  = "#fe8019";
 
 /* Oceanic Next */
 /* static const char col_dark[]        = "#131f26"; */
@@ -30,37 +56,49 @@ static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:ant
 /* static const char col_magenta[]     = "#C594C5"; */
 /* static const char col_brown[]       = "#AB7967"; */
 
-
 /* One Dark */
-static const char col_darker[]      = "#1f2129";
-static const char col_dark[]        = "#23252e";
-static const char col_outline[]     = "#2f333d";
-static const char col_outline_s[]   = "#404654";
-static const char col_black[]       = "#282c34";
-static const char col_gray1[]       = "#5c6370";
-static const char col_gray2[]       = "#828997";
-static const char col_white[]       = "#abb2bf";
-static const char col_red[]         = "#e06c75";
-static const char col_red2[]        = "#be5046";
-static const char col_orange[]      = "#d19a66";
-static const char col_yellow[]      = "#e5c07b";
-static const char col_green[]       = "#98c379";
-static const char col_cyan[]        = "#56b6c2";
-static const char col_blue[]        = "#61afef";
-static const char col_magenta[]     = "#c678dd";
+/* static const char col_darker[]      = "#1f2129"; */
+/* static const char col_dark[]        = "#23252e"; */
+/* static const char col_outline[]     = "#2f333d"; */
+/* static const char col_outline_s[]   = "#404654"; */
+/* static const char col_black[]       = "#282c34"; */
+/* static const char col_gray1[]       = "#5c6370"; */
+/* static const char col_gray2[]       = "#828997"; */
+/* static const char col_white[]       = "#abb2bf"; */
+/* static const char col_red[]         = "#e06c75"; */
+/* static const char col_red2[]        = "#be5046"; */
+/* static const char col_orange[]      = "#d19a66"; */
+/* static const char col_yellow[]      = "#e5c07b"; */
+/* static const char col_green[]       = "#98c379"; */
+/* static const char col_cyan[]        = "#56b6c2"; */
+/* static const char col_blue[]        = "#61afef"; */
+/* static const char col_magenta[]     = "#c678dd"; */
 
+// One Dark Scheme
+/* static const char *colors[][3]      = { */
+/* 	/1*               fg         bg         border   *1/ */
+/* 	[SchemeNorm]   =  { col_outline_s,  col_dark,   col_outline }, */
+/* 	[SchemeSel]    =  { col_gray2,      col_dark,   col_outline_s }, */
+/* 	[SchemeTitle]  =  { col_white,      col_black,  col_red }, */
+/* 	[SchemeLt]     =  { col_blue,       col_dark,   col_cyan }, */
+/* 	[SchemeHid]    =  { col_cyan,       col_gray1,  col_cyan  }, */
+/* 	[SchemeNotify] =  { col_red,        col_white,  col_gray1 }, */
+/* 	[SchemeIndOn]  =  { col_blue,       col_yellow, col_gray2 }, */
+/* 	[SchemeIndOff] =  { col_gray1,      col_blue,   col_gray1 }, */
+/* }; */
+
+// Gruvbox
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm]   =  { col_outline_s,  col_dark,   col_outline },
-	[SchemeSel]    =  { col_gray2,      col_dark,   col_outline_s },
-	[SchemeTitle]  =  { col_white,      col_black,  col_red },
-	[SchemeLt]     =  { col_blue,       col_dark,   col_cyan },
-	[SchemeHid]    =  { col_cyan,       col_gray1,  col_cyan  },
-	[SchemeNotify] =  { col_red,        col_white,  col_gray1 },
-	[SchemeIndOn]  =  { col_blue,       col_yellow, col_gray2 },
-	[SchemeIndOff] =  { col_gray1,      col_blue,   col_gray1 },
+	[SchemeNorm]   = { col_gb_gray2,   col_gb_bgm, col_gb_bg },
+	[SchemeSel]    = { col_gb_orange2, col_gb_bgm, col_gb_bgs },
+	[SchemeTitle]  = { col_gb_fg,      col_gb_bgs, col_gb_bg },
+	[SchemeLt]     = { col_gb_orange2, col_gb_bgm, col_gb_bg },
+	[SchemeHid]    = { col_gb_orange2, col_gb_gray1, col_gb_orange2  },
+	[SchemeNotify] = { col_gb_red1,    col_gb_bg,  col_gb_bg },
+	[SchemeIndOff] = { col_gb_green2,  col_gb_bg,  col_gb_bg },
+	[SchemeIndOn]  = { col_gb_blue2,   col_gb_bg,  col_gb_bg },
 };
-
 
 static const char *const autostart[] = {
 	"sh", "-c", "/usr/src/dwm/init.sh", NULL,

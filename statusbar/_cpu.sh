@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# Defining color variables
-COOL="^c#61afef^"
+COOL="^c#458588^"
 CI=""
-WARN="^c#e5c07b^"
+WARN="^c#fabd2f^"
 WI=""
-DANGER="^c#e06c75^"
-DI=""
+DANGER="^c#cc241d^"
+DI=" "
 
 # Fetching current CPU state
 TEMP="$(sensors | grep -e 'Package id 0' | awk '{print $4}' | sed 's/[^0-9\.]//g;s/\.[0-9]//g')"
