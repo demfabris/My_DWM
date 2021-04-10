@@ -12,49 +12,49 @@ static const int tiledraise         = 1;      /* 1 means raise tiled windows whe
 static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:antialias=true:autohint=true", "Noto", "NotoEmoji"};
 
 /* Gruvbox */
-static const char col_gb_black[]    = "#131515";
-static const char col_gb_bg[]       = "#1d2021";
-static const char col_gb_bgm[]      = "#282828";
-static const char col_gb_bgs[]      = "#32302f";
-static const char col_gb_fg[]       = "#fbf1c7";
-static const char col_gb_red1[]     = "#cc241d";
-static const char col_gb_red2[]     = "#fb4934";
-static const char col_gb_green1[]   = "#98971a";
-static const char col_gb_green2[]   = "#b8bb26";
-static const char col_gb_yellow1[]  = "#d79921";
-static const char col_gb_yellow2[]  = "#fabd2f";
-static const char col_gb_blue1[]    = "#458588";
-static const char col_gb_blue2[]    = "#83a598";
-static const char col_gb_purple1[]  = "#b16286";
-static const char col_gb_purple2[]  = "#83869b";
-static const char col_gb_aqua1[]    = "#689d6a";
-static const char col_gb_aqua2[]    = "#8ec07c";
-static const char col_gb_gray1[]    = "#a89984";
-static const char col_gb_gray2[]    = "#928374";
-static const char col_gb_gray3[]    = "#665c54";
-static const char col_gb_gray4[]    = "#3c3836";
-static const char col_gb_gray5[]    = "#a89984";
-static const char col_gb_orange1[]  = "#d65d0e";
-static const char col_gb_orange2[]  = "#fe8019";
+/* static const char col_gb_black[]    = "#131515"; */
+/* static const char col_gb_bg[]       = "#1d2021"; */
+/* static const char col_gb_bgm[]      = "#282828"; */
+/* static const char col_gb_bgs[]      = "#32302f"; */
+/* static const char col_gb_fg[]       = "#fbf1c7"; */
+/* static const char col_gb_red1[]     = "#cc241d"; */
+/* static const char col_gb_red2[]     = "#fb4934"; */
+/* static const char col_gb_green1[]   = "#98971a"; */
+/* static const char col_gb_green2[]   = "#b8bb26"; */
+/* static const char col_gb_yellow1[]  = "#d79921"; */
+/* static const char col_gb_yellow2[]  = "#fabd2f"; */
+/* static const char col_gb_blue1[]    = "#458588"; */
+/* static const char col_gb_blue2[]    = "#83a598"; */
+/* static const char col_gb_purple1[]  = "#b16286"; */
+/* static const char col_gb_purple2[]  = "#83869b"; */
+/* static const char col_gb_aqua1[]    = "#689d6a"; */
+/* static const char col_gb_aqua2[]    = "#8ec07c"; */
+/* static const char col_gb_gray1[]    = "#a89984"; */
+/* static const char col_gb_gray2[]    = "#928374"; */
+/* static const char col_gb_gray3[]    = "#665c54"; */
+/* static const char col_gb_gray4[]    = "#3c3836"; */
+/* static const char col_gb_gray5[]    = "#a89984"; */
+/* static const char col_gb_orange1[]  = "#d65d0e"; */
+/* static const char col_gb_orange2[]  = "#fe8019"; */
 
 /* Oceanic Next */
-/* static const char col_dark[]        = "#131f26"; */
-/* static const char col_black[]       = "#1B2B34"; */
-/* static const char col_gray1[]       = "#343D46"; */
-/* static const char col_gray2[]       = "#4F5B66"; */
-/* static const char col_gray3[]       = "#65737E"; */
-/* static const char col_gray4[]       = "#A7ADBA"; */
-/* static const char col_lightgray[]   = "#C0C5CE"; */
-/* static const char col_lightgray1[]  = "#CDD3DE"; */
-/* static const char col_white[]       = "#D8DEE9"; */
-/* static const char col_red[]         = "#EC5f67"; */
-/* static const char col_orange[]      = "#F99157"; */
-/* static const char col_yellow[]      = "#FAC863"; */
-/* static const char col_green[]       = "#99C794"; */
-/* static const char col_cyan[]        = "#5FB3B3"; */
-/* static const char col_blue[]        = "#6699CC"; */
-/* static const char col_magenta[]     = "#C594C5"; */
-/* static const char col_brown[]       = "#AB7967"; */
+static const char col_dark[]        = "#131f26";
+static const char col_black[]       = "#1B2B34";
+static const char col_gray1[]       = "#343D46";
+static const char col_gray2[]       = "#4F5B66";
+static const char col_gray3[]       = "#65737E";
+static const char col_gray4[]       = "#A7ADBA";
+static const char col_lightgray[]   = "#C0C5CE";
+static const char col_lightgray1[]  = "#CDD3DE";
+static const char col_white[]       = "#D8DEE9";
+static const char col_red[]         = "#EC5f67";
+static const char col_orange[]      = "#F99157";
+static const char col_yellow[]      = "#FAC863";
+static const char col_green[]       = "#99C794";
+static const char col_cyan[]        = "#5FB3B3";
+static const char col_blue[]        = "#6699CC";
+static const char col_magenta[]     = "#C594C5";
+static const char col_brown[]       = "#AB7967";
 
 /* One Dark */
 /* static const char col_darker[]      = "#1f2129"; */
@@ -87,17 +87,30 @@ static const char col_gb_orange2[]  = "#fe8019";
 /* 	[SchemeIndOff] =  { col_gray1,      col_blue,   col_gray1 }, */
 /* }; */
 
-// Gruvbox
+// Gruvbox Scheme
+/* static const char *colors[][3]      = { */
+/* 	/1*               fg         bg         border   *1/ */
+/* 	[SchemeNorm]   = { col_gb_gray2,   col_gb_bgm, col_gb_bg }, */
+/* 	[SchemeSel]    = { col_gb_orange2, col_gb_bgm, col_gb_bgs }, */
+/* 	[SchemeTitle]  = { col_gb_fg,      col_gb_bgs, col_gb_bg }, */
+/* 	[SchemeLt]     = { col_gb_orange2, col_gb_bgm, col_gb_bg }, */
+/* 	[SchemeHid]    = { col_gb_orange2, col_gb_gray1, col_gb_orange2  }, */
+/* 	[SchemeNotify] = { col_gb_red1,    col_gb_bg,  col_gb_bg }, */
+/* 	[SchemeIndOff] = { col_gb_green2,  col_gb_bg,  col_gb_bg }, */
+/* 	[SchemeIndOn]  = { col_gb_blue2,   col_gb_bg,  col_gb_bg }, */
+/* }; */
+
+// Oceanic Dark Scheme
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm]   = { col_gb_gray2,   col_gb_bgm, col_gb_bg },
-	[SchemeSel]    = { col_gb_orange2, col_gb_bgm, col_gb_bgs },
-	[SchemeTitle]  = { col_gb_fg,      col_gb_bgs, col_gb_bg },
-	[SchemeLt]     = { col_gb_orange2, col_gb_bgm, col_gb_bg },
-	[SchemeHid]    = { col_gb_orange2, col_gb_gray1, col_gb_orange2  },
-	[SchemeNotify] = { col_gb_red1,    col_gb_bg,  col_gb_bg },
-	[SchemeIndOff] = { col_gb_green2,  col_gb_bg,  col_gb_bg },
-	[SchemeIndOn]  = { col_gb_blue2,   col_gb_bg,  col_gb_bg },
+	[SchemeNorm] =    { col_gray2,  col_dark,  col_black },
+	[SchemeSel]  =    { col_yellow, col_dark,  col_gray1 },
+	[SchemeTitle]=    { col_yellow,  col_black,  col_red },
+	[SchemeLt]   =    { col_yellow, col_dark,  col_cyan },
+	[SchemeHid]  =    { col_cyan,   col_gray1,  col_cyan  },
+	[SchemeNotify] =  { col_red,    col_white,  col_gray1 },
+	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 },
+	[SchemeIndOff] =  { col_green,  col_blue,   col_gray1 },
 };
 
 static const char *const autostart[] = {
@@ -188,6 +201,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+ 	{ MODKEY|ControlMask,           XK_Right,  shiftview,      {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_Left,   shiftview,      {.i = -1 } },
 	{ MODKEY,                       XK_Up,     show,           {0} },
 	{ MODKEY,                       XK_Down,   hide,           {0} },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -g 120x30 -e nnn -deHUwxc") },
@@ -197,6 +212,7 @@ static Key keys[] = {
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,      SHCMD("pulseaudio-ctl up 5 ; kill -44 $(pidof dwmblocks)") },
 	{ 0,			  XF86XK_AudioMute,        spawn,      SHCMD("pulseaudio-ctl mute ; kill -44 $(pidof dwmblocks)") },
 	{ 0,                  PrintScreenDWM,    spawn,          SHCMD("screenshot") },
+	{ MODKEY|ShiftMask,             XK_l,    spawn,          SHCMD("loginctl suspend-then-hibernate") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
