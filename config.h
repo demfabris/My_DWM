@@ -37,24 +37,38 @@ static const char *fonts[]          = { "FantasqueSansMono Nerd Font:size=16:ant
 /* static const char col_gb_orange1[]  = "#d65d0e"; */
 /* static const char col_gb_orange2[]  = "#fe8019"; */
 
-/* Oceanic Next */
-static const char col_dark[]        = "#131f26";
-static const char col_black[]       = "#1B2B34";
-static const char col_gray1[]       = "#343D46";
-static const char col_gray2[]       = "#4F5B66";
-static const char col_gray3[]       = "#65737E";
-static const char col_gray4[]       = "#A7ADBA";
-static const char col_lightgray[]   = "#C0C5CE";
-static const char col_lightgray1[]  = "#CDD3DE";
-static const char col_white[]       = "#D8DEE9";
-static const char col_red[]         = "#EC5f67";
-static const char col_orange[]      = "#F99157";
-static const char col_yellow[]      = "#FAC863";
-static const char col_green[]       = "#99C794";
-static const char col_cyan[]        = "#5FB3B3";
-static const char col_blue[]        = "#6699CC";
-static const char col_magenta[]     = "#C594C5";
-static const char col_brown[]       = "#AB7967";
+/* Ayu Dark */
+static const char col_black[]         = "#0a0e14";
+static const char col_dark[]          = "#1c2328";
+static const char col_red[]           = "#f07178";
+static const char col_green[]         = "#c2d94c";
+static const char col_yellow[]        = "#e6b450";
+static const char col_blue[]          = "#59c2ff";
+static const char col_magenta[]       = "#d4bfff";
+static const char col_cyan[]          = "#95e6cb";
+static const char col_orange[]        = "#ff8f40";
+static const char col_white[]         = "#b3b1ad";
+static const char col_gray1[]         = "#232b32";
+static const char col_gray2[]         = "#464d5e";
+
+/* /1* Oceanic Next *1/ */
+/* static const char col_dark[]        = "#131f26"; */
+/* static const char col_black[]       = "#1B2B34"; */
+/* static const char col_gray1[]       = "#343D46"; */
+/* static const char col_gray2[]       = "#4F5B66"; */
+/* static const char col_gray3[]       = "#65737E"; */
+/* static const char col_gray4[]       = "#A7ADBA"; */
+/* static const char col_lightgray[]   = "#C0C5CE"; */
+/* static const char col_lightgray1[]  = "#CDD3DE"; */
+/* static const char col_white[]       = "#D8DEE9"; */
+/* static const char col_red[]         = "#EC5f67"; */
+/* static const char col_orange[]      = "#F99157"; */
+/* static const char col_yellow[]      = "#FAC863"; */
+/* static const char col_green[]       = "#99C794"; */
+/* static const char col_cyan[]        = "#5FB3B3"; */
+/* static const char col_blue[]        = "#6699CC"; */
+/* static const char col_magenta[]     = "#C594C5"; */
+/* static const char col_brown[]       = "#AB7967"; */
 
 /* One Dark */
 /* static const char col_darker[]      = "#1f2129"; */
@@ -101,17 +115,31 @@ static const char col_brown[]       = "#AB7967";
 /* }; */
 
 // Oceanic Dark Scheme
+/* static const char *colors[][3]      = { */
+/* 	/1*               fg         bg         border   *1/ */
+/* 	[SchemeNorm] =    { col_gray2,  col_dark,  col_black }, */
+/* 	[SchemeSel]  =    { col_yellow, col_dark,  col_gray1 }, */
+/* 	[SchemeTitle]=    { col_yellow,  col_black,  col_red }, */
+/* 	[SchemeLt]   =    { col_yellow, col_dark,  col_cyan }, */
+/* 	[SchemeHid]  =    { col_cyan,   col_gray1,  col_cyan  }, */
+/* 	[SchemeNotify] =  { col_red,    col_white,  col_gray1 }, */
+/* 	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 }, */
+/* 	[SchemeIndOff] =  { col_green,  col_blue,   col_gray1 }, */
+/* }; */
+
+// Ayu Dark Scheme
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
+	/*                    fg         bg         border   */
 	[SchemeNorm] =    { col_gray2,  col_dark,  col_black },
-	[SchemeSel]  =    { col_yellow, col_dark,  col_gray1 },
-	[SchemeTitle]=    { col_yellow,  col_black,  col_red },
-	[SchemeLt]   =    { col_yellow, col_dark,  col_cyan },
-	[SchemeHid]  =    { col_cyan,   col_gray1,  col_cyan  },
+	[SchemeSel]  =    { col_blue, col_dark,  col_gray1 },
+	[SchemeTitle]=    { col_orange,  col_gray1,  col_red },
+	[SchemeLt]   =    { col_blue, col_dark,  col_cyan },
+	[SchemeHid]  =    { col_red,   col_gray1,  col_cyan  },
 	[SchemeNotify] =  { col_red,    col_white,  col_gray1 },
-	[SchemeIndOn]  =  { col_cyan,   col_yellow, col_gray2 },
+	[SchemeIndOn]  =  { col_orange,   col_yellow, col_gray2 },
 	[SchemeIndOff] =  { col_green,  col_blue,   col_gray1 },
 };
+
 
 static const char *const autostart[] = {
 	"sh", "-c", "/usr/src/dwm/init.sh", NULL,

@@ -19,7 +19,8 @@ dunst &
 
 # Wallpaper
 # feh --bg-scale ~/Pictures/redblocks.jpg
-hsetroot -solid "#131f26" # oceanic next
+hsetroot -solid "#1c2328" # ayu
+# hsetroot -solid "#131f26" # oceanic next
 # hsetroot -solid "#23252e" # onedark
 # hsetroot -solid "#076678" # gruvbox
 
