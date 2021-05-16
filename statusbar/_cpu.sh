@@ -1,10 +1,10 @@
 #!/bin/bash
 
-COOL="^c#6699cc^"
+COOL="^c#59c2ff^"
 CI=""
-WARN="^c#fac863^"
+WARN="^c#ff8f40^"
 WI=""
-DANGER="^c#ec5f67^"
+DANGER="^c#f07178^"
 DI=" "
 
 # Fetching current CPU state

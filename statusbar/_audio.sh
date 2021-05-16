@@ -11,4 +11,4 @@ MUTE="$(amixer get Master | awk 'NR==6 {print $6}' | sed 's/[^a-z]//g')"
 
 [ $MUTE == 'off' ] && VOLSTATE="婢"
 
-echo "^c#ec5f67^ ${VOL}% ${VOLSTATE} ^d^"
+echo "^c#f07178^ ${VOL}% ${VOLSTATE} ^d^"

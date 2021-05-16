@@ -2,4 +2,4 @@
 
 # Display date
 
-echo "^c#6699cc^ $(date +%x)   ^d^"
+echo "^c#59c2ff^ $(date +%x)   ^d^"
